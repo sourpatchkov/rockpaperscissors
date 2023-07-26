@@ -10,33 +10,74 @@ function getcomputerchoice(){
     return "SCISSORS"}
 }
 
-function round(userInput, computerSelection){
-    if(userInput=== "ROCK" && computerSelection === "SCISSORS"){
-    return "User won"
+function round(userInput){
+    let computerSelection = getcomputerchoice()
+
+     if(userInput=== "ROCK" && computerSelection === "SCISSORS"){
+       uScore++;
+        userScore.textContent = 'User: ' + uScore;
+        state.textContent = 'User Won'
+        userR.textContent = 'User: ' + userInput
+        computerR.textContent = 'Computer: ' + computerSelection
     }
     else if(userInput=== "PAPER" && computerSelection === "ROCK"){
-        return "User won"
+        uScore++;
+        userScore.textContent = 'User: ' + uScore;
+        state.textContent = 'User Won'
+        userR.textContent = 'User: ' + userInput
+        computerR.textContent = 'Computer: ' + computerSelection
     }
     else if(userInput=== "SCISSORS" && computerSelection === "PAPER"){
-        return "User won"
+        uScore++;
+        userScore.textContent = 'User: ' + uScore;
+        state.textContent = 'User Won'
+        userR.textContent = 'User: ' + userInput
+        computerR.textContent = 'Computer: ' + computerSelection
     }
     else if(userInput === computerSelection){
-        return "draw"
+        state.textContent = 'Draw'
+        userR.textContent = 'User: ' + userInput
+        computerR.textContent = 'Computer: ' + computerSelection
     }
     else{
-        return "User Lost"
+        cScore++;
+        cpuScore.textContent = 'Computer: ' + cScore
+        state.textContent = 'Computer Won'
+        userR.textContent = 'User: ' + userInput
+        computerR.textContent = 'Computer: ' + computerSelection
+    }
+
+    if(uScore === 5 || cScore === 5){
+        rock.disabled = true
+        paper.disabled = true
+        scissors.disabled = true
     }
 }
 
-const userInput = prompt("Pick, rock, paper, scissors").toUpperCase()
-const computerSelection = getcomputerchoice()
-
-if(userInput === "ROCK" || userInput === "PAPER" || userInput === "SCISSORS"){
-
-console.log(userInput)
-console.log(computerSelection)
-console.log(round(userInput,computerSelection))
-
+function checkScore (userInput){
+            round(userInput)
 }
-else
-console.log("Incorrect input")
+
+
+let uScore = 0;
+let cScore = 0;
+
+const rock = document.querySelector('#rock')
+const paper = document.querySelector('#paper')
+const scissors = document.querySelector('#scissors')
+
+
+
+rock.addEventListener('click', () =>checkScore('ROCK'))
+paper.addEventListener('click', () => checkScore('PAPER'))
+scissors.addEventListener('click', () => checkScore('SCISSORS'))
+
+// while(uScore == 5|| cScore == 5){
+// // Get the button element
+//     console.log('HI')
+//     rock.removeEventListener('click', () => round('ROCK'))
+//    rock.disabled = true;
+//    paper.disabled =true;
+//    scissors.disabled = true; 
+// }
+
