@@ -51,13 +51,15 @@ function round(userInput){
         rock.disabled = true
         paper.disabled = true
         scissors.disabled = true
+        if(uScore> cScore){
+            win.textContent= 'User Won!'
+        }
+        else{
+            win.textContent= 'Computer Won!'
+        }
+        restart()
     }
 }
-
-function checkScore (userInput){
-            round(userInput)
-}
-
 
 let uScore = 0;
 let cScore = 0;
@@ -65,19 +67,32 @@ let cScore = 0;
 const rock = document.querySelector('#rock')
 const paper = document.querySelector('#paper')
 const scissors = document.querySelector('#scissors')
+const modal_container = document.getElementById('modal-contain')
+const tryagain = document.getElementById('tryagain')
 
 
+rock.addEventListener('click', () =>round('ROCK'))
+paper.addEventListener('click', () => round('PAPER'))
+scissors.addEventListener('click', () => round('SCISSORS'))
 
-rock.addEventListener('click', () =>checkScore('ROCK'))
-paper.addEventListener('click', () => checkScore('PAPER'))
-scissors.addEventListener('click', () => checkScore('SCISSORS'))
+function restart(){
+    modal_container.classList.add('show');
+    modal.classList.add('show')
+    
+    tryagain.addEventListener('click',()=> screenRestart())
+}
 
-// while(uScore == 5|| cScore == 5){
-// // Get the button element
-//     console.log('HI')
-//     rock.removeEventListener('click', () => round('ROCK'))
-//    rock.disabled = true;
-//    paper.disabled =true;
-//    scissors.disabled = true; 
-// }
-
+function screenRestart(){
+    modal_container.classList.remove('show'); 
+    modal.classList.remove('show');
+    uScore =0;
+    cScore =0;
+    state.textContent = '--------' 
+    userScore.textContent = 'User: 0'
+    cpuScore.textContent= 'Computer: 0'
+    userR.textContent= 'User: ------'
+    computerR.textContent = 'Computer: ------'
+    rock.disabled = false
+    paper.disabled = false
+    scissors.disabled = false
+}

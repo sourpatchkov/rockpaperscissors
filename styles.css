@@ -1,0 +1,142 @@
+body{
+    background-color:#292929;
+    color: #FFFFFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.All{
+    display: flex;
+    flex-direction: column;
+}
+
+h1{
+    text-align: center;
+    font-size: 70px;
+}
+
+.container{
+    display: flex;
+    flex: 1;
+    list-style-type: none;
+    justify-content: center;
+    padding: 0;
+    gap: 40px; 
+}
+
+.text{
+    flex:none
+}
+
+.container button{
+    border-radius: 8px;
+    border-style: double;
+    border: 0px;
+    margin: 4px 2 px;
+    padding: 20px 70px;
+    transition-duration: 0.4s;
+    background-color: #6d6969;
+    color:#FFFFFF;
+    font-size: 25px;
+    width: 230px;
+}
+
+.container button:hover{
+    background-color: #FFFFFF;
+    color:#050505;
+    border-radius: 20px;
+    box-shadow: 0 9px #898c8d;
+    cursor:grab;
+
+    
+}
+
+.container button:active{
+box-shadow: 0 5px rgb(83, 82, 82);
+transform: translateY(4px);
+}
+
+.info{
+   display:inline-flex;
+   justify-content: space-around;
+   font-size:x-large;
+}
+
+.text{
+resize: none;
+padding: 50px 0px;
+width: 250px;
+}
+.side{
+    display: flex;
+}
+
+#modal-contain{
+    background-color: rgba(165, 176, 209, 0.363);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 300vh;
+    width: 300vh;
+    opacity: 0;
+    pointer-events: none;
+}
+
+#modal-contain.show{
+    pointer-events: auto;
+    opacity: 1;
+}
+#modal.show{
+    pointer-events: auto;
+    opacity: 1;
+}
+
+#modal{
+
+    background-color: #636161;
+    width: 300px;
+    height: 150px;
+    max-width:100;
+    color:#FFFFFF;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 12px;
+    position: fixed;
+    font-size: larger;
+    gap: 15px;
+    border: #050505;
+    border-style: solid;
+    opacity: 0;
+    pointer-events: none;
+}
+
+#tryagain{
+    border-width: 5px;
+    padding: 10px;
+    border-style:none;
+    border-radius: 8px;
+    width: 200px;
+    height: 50px;
+    transition-duration: 0.2s;
+    font-size: x-large;
+    border: #050505;
+    border-style:solid;
+    border-width: 3px;
+}
+
+#winner{
+    color: #202020;
+    font-size:xx-large;
+    width: 100px
+}
+
+#tryagain:hover{
+background-color: rgb(151, 199, 231);
+
+}

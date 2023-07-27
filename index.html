@@ -3,10 +3,12 @@
     <head>
         <meta charset="UTF-8">
         <title>Rock Paper Scissors</title>
+        <link rel="stylesheet" href="styles.css">
         <script src = "javascript.js" defer> </script>
     </head>
 
     <body>
+      <div class="All">
       <h1>Rock Paper Scissors</h1>
       <ul class="container">
         <li><button id="rock" >Rock</button></li>
@@ -14,23 +16,27 @@
         <li><button id="scissors">Scissors</button></li>
       </ul>
 
-      <div> Status: 
+      <div class="info">
+      <div class="text"> Status: 
         <div id="state">--------</div>
       </div>
 
-      <div>Score:
-        <div id="userScore">User: 0 </div>
-        <div id="cpuScore">Computer: 0</div>
+      <div class="text">Score:
+        <div class="side" id="userScore">User: 0 </div>
+        <div class="side" id="cpuScore">Computer: 0</div>
       </div>
 
-      <div>Results: 
-        <div id="userR">User: -----</div>
-        <div id="computerR">Computer: ------</div>
+      <div class="text">Results: 
+        <div class="side" id="userR">User: ------</div>
+        <div class="side" id="computerR">Computer: ------</div>
       </div>
 
-      <div id="End">
-        <div id='winner'>Winner</div>
-        <button id="Tryagain">Play Again</button>
       </div>
+      </div>
+    </div>
+    <div id="modal-contain"></div>
+    <div id="modal">
+      <div id='win'>Winner</div>
+      <button id="tryagain">Play Again</button>
     </body>
 </html>
